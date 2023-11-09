@@ -1,0 +1,29 @@
+POST http://localhost:3072/register
+Content-Type: application/json
+
+{
+    "username" : "madhu2526",
+    "name" : "Madhu kiran",
+    "password" : "madhu_123",
+    "gender" : "male",
+    "location" : "NTPC"
+}
+###
+
+POST http://localhost:3072/login
+Content-Type: application/json
+
+{
+    "username" : "madhu2526",
+    "password" : "madhu_123"
+}
+###
+
+PUT http://localhost:3072/change-password
+Content-Type: application/json
+
+{
+    "username" : "madhu2526",
+    "oldPassword" : "madhu_123",
+    "newPassword" : "yadav_2526"
+}
