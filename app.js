@@ -15,8 +15,8 @@ const initializeDBAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(3072, () => {
-      console.log("Server Running at http://localhost:3072/");
+    app.listen(3079, () => {
+      console.log("Server Running at http://localhost:3079/");
     });
   } catch (e) {
     console.log(`DB Error: ${e.message}`);
@@ -80,8 +80,7 @@ app.post("/login", async (request, response) => {
 });
 app.put("/change-password", async (request, response) => {
   const { username, oldPassword, newPassword } = request.body;
-  const selectUserQuery = `
-    SELECT * FROM user WHERE username = '${username}';`;
+  const selectUserQuery = `SELECT * FROM user WHERE username = '${username}';`;
   const databaseUser = await db.get(selectUserQuery);
   if (databaseUser === undefined) {
     response.status(400);
